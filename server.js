@@ -3,6 +3,8 @@ const http = require('http')
 const { v4: uuidv4 } = require('uuid')
 const { ExpressPeerServer } = require('peer')
 
+const PORT = process.env.PORT || 8080
+
 const app = express()
 
 const server = http.Server(app)
@@ -34,4 +36,4 @@ io.on('connection', (socket) => {
   })
 })
 
-server.listen(8080)
+server.listen(PORT)
